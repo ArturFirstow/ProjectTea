@@ -1,0 +1,48 @@
+@media (max-width: 768px) {
+    .nav-list{
+        display: none;
+    }
+
+    .logo {
+        display: block;
+        position: static;
+    }
+    .about-title {
+        flex-wrap: wrap;
+    }
+
+    .nav.open .nav-list {
+        
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: white;
+        z-index: 100;
+        padding: 46px 30px; 
+        display: flex; 
+        flex-direction: column;
+        row-gap: 40px;
+        font-size: 34px;
+        font-weight: 600;
+    }
+
+    .logo {
+        position: fixed;
+        z-index: 9999;
+        right: 20px;
+        top: 80px;
+    }
+    .contact-img {
+        display: none;
+    }
+    .contact-form{
+        margin: 0 auto;
+        padding-bottom: 40px;
+    }
+    .product-img {
+    margin: 0 20px
+    }
+}
+    

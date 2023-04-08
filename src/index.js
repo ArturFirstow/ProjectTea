@@ -1,4 +1,4 @@
-
+// SMOOTH SCROLL
 
 // Обработчик событий на клик по ссылке
 document.querySelectorAll('.scroll-link').forEach(link => {
@@ -14,7 +14,7 @@ document.querySelectorAll('.scroll-link').forEach(link => {
     });
   });
 
-
+// HEADER BUTTON
 
 const headerBtn = document.querySelector('.header-btn');
 const modalContainer = document.querySelector('.modal-container');
@@ -48,7 +48,7 @@ modalContainer.style.display = 'none';
 
 
 
-
+// FOOTER BUTTON
 
 // Получаем кнопку
 const button = document.querySelector('.footer-btn');
@@ -78,10 +78,76 @@ button.addEventListener('click', function() {
 
 
 
+// NAVIGATION
+
+const nav = document.querySelector('#nav');
+const navBtn = document.querySelector('#logo');
+const navBtnImg = document.querySelector('#logo-img');
 
 
+function closeNav() {
+  nav.classList.remove('open');
+  navBtnImg.src = 'img/nav.svg';
+}
+
+nav.querySelectorAll('a').forEach(function(item) {
+  item.addEventListener('click', function(event) {
+    // Закрываем блок меню
+    closeNav();
+
+    const href = item.getAttribute('href');
+
+    // Перенаправляем пользователя на соответствующую страницу
+    if (href.startsWith('#')) {
+      event.preventDefault();
+      const target = document.querySelector(href);
+      if (target) {
+        target.scrollIntoView({ behavior: 'smooth' });
+      }
+    }
+  });
+});
+
+// Добавляем обработчик событий на кнопку меню
+navBtn.onclick = () => {
+  if (nav.classList.toggle('open')) {
+    navBtnImg.src = 'img/nav-close.svg';
+  } else {
+    navBtnImg.src = 'img/nav.svg';
+  }
+};
+
+navBtn.onclick = () => {
+  if (nav.classList.toggle('open')) {
+    navBtn.src = 'img/nav-close.svg';
 
 
+  }else {
+    navBtn.src = 'img/nav.svg';
+  }
+}
+
+const originalSrc = navBtnImg.src;
+
+navBtn.onclick = () => {
+  if (nav.classList.toggle('open')) {
+    navBtnImg.src = 'img/nav-close.svg';
+  } else {
+    navBtnImg.src = originalSrc;
+  }
+}
+
+nav.addEventListener('click', (event) => {
+  if (event.target.matches('.nav-link')) {
+    // Закрытие навигации
+    nav.classList.remove('open');
+    // Переход на нужный пункт страницы
+    const targetId = event.target.getAttribute('href');
+    document.querySelector(targetId).scrollIntoView({behavior: 'smooth'});
+    // Восстановление оригинальной картинки лого
+    navBtnImg.src = originalSrc;
+  }
+});
   
 Aos.init();
 

@@ -18,6 +18,7 @@ a, u {
 .header {
     padding-top: 36px;
     background-color: #ffffff;
+    position: relative;
 }
 
 .header-nav {
@@ -30,9 +31,12 @@ a, u {
 }
 
 .logo {
-    position: relative;
+    position: absolute;
     padding-right: 12px;
     padding-bottom: 3px;
+    display: none;
+    background-color: #fff;
+    border: none;
 }
 
 .nav-list{
@@ -222,7 +226,7 @@ a, u {
         justify-content:center ;
         text-transform: uppercase;
         column-gap: 50px;
-        flex-wrap: wrap;
+        
     }
     
     .about-heading{
