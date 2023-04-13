@@ -21,7 +21,7 @@ a, u {
     padding: 0 30px;
     margin: 0 auto;
     position: relative;
-    max-height: 100vh;
+    box-sizing: border-box;
 }
 
 .header {

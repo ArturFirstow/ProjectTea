@@ -139,9 +139,9 @@
     .production-content {
         display: block;
     }
-    .header-image {
-        /* display: none; */
-    }
+   .about-card {
+    padding: 0;
+   }
 
     
 }
