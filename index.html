@@ -26,6 +26,7 @@
                         <li class="nav-item"><a href="#contact" class="nav-link scroll-link">Напишите нам</a></li>
                     </ul>
                 </nav>
+                <div class="inv"></div>
                 <button id="logo" class="logo">
                     <img id="logo-img" src = "img/nav.png" alt = "Menu">
                 </button>
@@ -48,13 +49,13 @@
         </div>
   
         <div class="form-group">
-          <label for="phone">Номер телефона:</label>
-          <input type="tel" id="phone" name="phone" required>
+          <label for="last - name">Фамилия: </label>
+          <input type="text" id="phone" name="name" required>
         </div>
   
         <div class="form-group">
-          <label for="email">E-mail:</label>
-          <input type="email" id="email" name="email" required>
+          <label for="tel">Номер телефона:</label>
+          <input type="tel" id="email" name="tel" required>
         </div>
   
         <button type="submit" class="modal-btn">Отправить</button>
@@ -67,8 +68,9 @@
                 </div>
                 <div class="header-image" >
                     <picture>
-                      <img src="./img/main.png" alt="hero">
-                    </picture>
+                        <source media="(max-width: 460px)" srcset="./img/main-small.png">
+                        <img src="./img/main.png" alt="hero">
+                      </picture>
                     
                 </div>
                </div>
@@ -158,7 +160,7 @@
                     <form action="#contact">
                         <input type="text" placeholder="Имя">
                         <input type="text" placeholder="Фамилия">
-                        <input type="number" placeholder="Номер телефона">
+                        <input type="tel" placeholder="Номер телефона">
                         <button class="footer-btn">Заказать</button>
                     </form>
                 </div>

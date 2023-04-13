@@ -1,9 +1,17 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@200;700&family=Open+Sans:wght@300;700;800&display=swap');
 
+
+
 body {
     font-family: 'Inter', sans-serif;
     color:#000;
+    box-sizing: border-box
 }
+/* svg {
+    fill: transparent;
+    stroke: currentColor;
+    stroke-width: 4px;
+  } */
 
 a, u {
     text-decoration: none;
@@ -21,13 +29,17 @@ a, u {
     position: relative;
 }
 
+
+
 .header-nav {
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-start ;
     align-items: center;
     margin-bottom: 20px;
     flex-wrap: wrap;
-    padding: 0 85px;
+    width: 85%;
+    text-align: center;
+    margin: 0 auto;
 }
 
 .logo {
@@ -35,7 +47,7 @@ a, u {
     padding-right: 12px;
     padding-bottom: 3px;
     display: none;
-    background-color: rgba(255, 255, 255, 0.5);
+    background-color: rgba(255, 255, 255, 0);
     border: none;
     opacity: 0.5;
 }
@@ -79,6 +91,7 @@ a, u {
         /* column-gap: 140px; */
         align-items: center;
         flex-wrap: wrap;
+        box-sizing: border-box;
     }
     
     
@@ -115,7 +128,15 @@ a, u {
         transition: all 0.3s ease;
         border: none;
         padding: 7px 40px 7px 40px;
-       ;
+        cursor: pointer;
+        box-sizing: border-box;
+    }
+
+    .header-btn:hover {
+        background-color: #fff;
+        color: #26CD55;
+        border: 0px solid #26CD55;
+        
     }
 
     .footer-btn {
@@ -129,7 +150,14 @@ a, u {
         transition: all 0.3s ease;
         border: none;
         padding: 7px 40px 7px 40px;
-       ;
+        cursor: pointer;
+    }
+
+    .footer-btn:hover {
+        background-color: #fff;
+        color: #26CD55;
+        border: 0px solid #26CD55;
+
     }
 
     .footer-btn.sent {
@@ -201,15 +229,6 @@ a, u {
         font-weight: bold;
       }
       
-  
-
-    
-    .header-btn:hover {
-        background-color: #fff;
-        color: #26CD55;
-        border: 1px solid #26CD55;
-    }
-
     .section-line {
         margin-top: 100px;
         width: 100%;
@@ -244,30 +263,33 @@ a, u {
 
 
     .about-row {
-        display: flex;
-        flex-wrap: wrap;
-        align-items: center;
-        justify-content: center;
-        column-gap: 50px;
-        padding: 0 30px;
+        display: flex; /* задаем flex-контейнер */
+        justify-content: space-between; /* выравниваем элементы в ряд с одинаковыми отступами между ними */
+        /* flex-wrap: wrap;  */
+        margin: -10px;
     }
     
     
     .about-card {
-        min-width: 200px;
+        flex-basis: calc(25% - 20px); /* задаем ширину элемента */
+        margin: 10px; /* задаем внутренний отступ элемента */
+        padding: 20px; /* задаем внутренний отступ содержимого элемента */
+        
+      }
+      
+      .about-card-image {
+        display: block; /* убираем лишний пробел снизу */
+        margin-bottom: 20px; /* добавляем отступ снизу */
+        margin: 0 auto;
+      }
+      
+      .about-card-title {
+        font-size: 24px; /* задаем размер шрифта */
+        font-weight: bold; /* задаем жирность шрифта */
+        color: #333; /* устанавливаем цвет текста */
+        margin-bottom: 10px; /* добавляем отступ снизу */
         text-align: center;
-
-    }
-    .about-card-image {
-        margin-bottom: 30px;
-    }
-    .about-card-title {
-        font-size: 20px;
-        font-weight: 700;
-        margin-bottom: 10px;
-        max-width: 250px;
-    }
-
+        }
     /* PRODUCTION */
 
     .production {
